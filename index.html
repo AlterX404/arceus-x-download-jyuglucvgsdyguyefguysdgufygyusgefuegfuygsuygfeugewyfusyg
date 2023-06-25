@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <style>
+        /* CSS styles for the loading bar, buttons, and text */
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .loading-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: red;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #f2f2f2;
+            margin-top: 20px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #FF0000;
+            width: 0%;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .continue-button,
+        .subscribe-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            transition: background-color 0.5s ease;
+        }
+
+        .continue-button {
+            background-color: #FF0000;
+        }
+
+        .subscribe-button {
+            background-color: #FF0000;
+            animation: rainbow 3s infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-color: red; }
+            14% { background-color: orange; }
+            28% { background-color: yellow; }
+            42% { background-color: green; }
+            57% { background-color: blue; }
+            71% { background-color: indigo; }
+            85% { background-color: violet; }
+            100% { background-color: red; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-text">
+        <h1>Arceus X Check Point (1/2) Loading</h1>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-fill"></div>
+    </div>
+    <div class="button-container">
+        <button class="continue-button" onclick="redirectToKeySystem()">Arceus X Check Point 1/2</button>
+    </div>
+    <div class="button-container">
+        <button class="subscribe-button" onclick="subscribeToYouTube()">Subscribe to Alter-X On YouTube</button>
+    </div>
+
+    <script>
+        // JavaScript code for redirecting and showing the buttons
+        var progressBarFill = document.querySelector('.progress-bar-fill');
+        var buttonContainer = document.querySelector('.button-container');
+
+        function redirectToKeySystem() {
+            window.location.href = 'https://link-target.net/447323/arceus-x-check-point-1';
+        }
+
+        function subscribeToYouTube() {
+            window.location.href = 'https://www.youtube.com/channel/UCBTkrkGEibTUayqVvs8G5fg';
+        }
+
+        function animateProgressBar() {
+            var width = 0;
+            var intervalId = setInterval(frame, 10);
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(intervalId);
+                    buttonContainer.style.display = 'block';
+                } else {
+                    width++;
+                    progressBarFill.style.width = width + '%';
+                }
+            }
+        }
+
+        setTimeout(animateProgressBar, 1000);
+    </script>
+</body>
+</html>
